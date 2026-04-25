@@ -530,6 +530,17 @@ body {
         border-radius: 25px;
     }
 
+    .card:hover {
+        transform: none;
+        transition: none;
+    }
+
+    .reseaux i:hover {
+        transform: none;
+        transition: none;
+    }
+
+
     .card img {
         width: 120px;
         height: 120px;
@@ -592,6 +603,10 @@ body {
         height: 260px;
     }
 
+    .box-pro:hover {
+        transform: none;
+    }
+
     .title h3 {
         font-size: 14px;
     }
@@ -611,6 +626,11 @@ body {
 
     .contact-box {
         gap: 10px;
+    }
+
+    .contact-box a:hover {
+        transition: none;
+        transform: none;
     }
 
     .btn-contact {
