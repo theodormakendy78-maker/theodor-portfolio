@@ -592,6 +592,10 @@ body {
         height: 260px;
     }
 
+    .box-pro :hover {
+        transition: none;
+    }
+
     .title h3 {
         font-size: 14px;
     }
