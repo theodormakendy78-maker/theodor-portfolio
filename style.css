@@ -330,7 +330,7 @@ body {
 
 /* images */
 .image1 {
-    background-image: url("images/IMG_2250[1].JPG");
+    background-image: url("images/WhatsApp\ Image\ 2026-04-25\ at\ 20.53.53.jpeg");
 }
 
 .image2 {
@@ -338,7 +338,7 @@ body {
 }
 
 .image3 {
-    background-image: url("images/IMG_2250[1].JPG");
+    background-image: url("images/WhatsApp\ Image\ 2026-04-25\ at\ 21.01.55.jpeg");
 }
 
 /* contact style */
@@ -436,218 +436,321 @@ body {
    Ajoute ce code à la FIN de ton CSS
 ========================= */
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
 
-    html,
-    body {
-        overflow-x: hidden;
-        transition: none;
+    /* icône fixe */
+    /* icône menu */
+    #menu {
+        position: fixed !important;
+        top: 5px;
+        right: 5px;
+        font-size: 30px;
+        cursor: pointer;
+        z-index: 3000;
+        box-shadow: 1px 1px 0px #222;
+        padding: 5px;
     }
 
-    body {
-        padding: 0 12px;
+    #menu {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
     }
 
-    /* NAVBAR */
-    .container-nav {
-        flex-direction: column;
-        gap: 15px;
-        padding: 18px;
-        border-radius: 20px;
+    /* icône visible */
+    #menu.show-icon {
+        opacity: 1;
+        pointer-events: auto;
     }
 
-    .container-nav i {
-        z-index: 1;
+    /* mobile */
+    @media (max-width: 769px) {
+
+        #menu {
+            display: block;
+        }
+
+        .container-nav {
+            position: fixed;
+            top: 0;
+            right: -200px;
+            width: 150px;
+            height: 50vh;
+            background: #111;
+            transition: 0.3s ease;
+            padding: 60px 20px;
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+
+        }
+
+        .disponible p {
+            font-size: 10px;
+        }
+
+
+
+        .container-nav.active {
+            right: 0;
+        }
+
+        .header-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* cacher icône quand menu ouvert */
+        #menu.hide {
+            display: none;
+        }
     }
 
-    .presentation {
-        margin-top: 0px;
-    }
+    @media (max-width: 768px) {
 
-    .container-nav {
+        html,
+        body {
+            overflow-x: hidden;
+            transition: none;
+        }
+
+        .box-pro,
+        .projet-carte,
+        .reseaux,
+        .card:hover {
+            transform: none;
+        }
+
+        body {
+            padding: 0 12px;
+        }
+
+        /* NAVBAR */
+        .container-nav {
+            flex-direction: column;
+            gap: 15px;
+            padding: 18px;
+            border-radius: 20px;
+        }
+
+        .container-nav i {
+            z-index: 1;
+        }
+
+        .presentation {
+            margin-top: 0px;
+        }
+
+        /* .container-nav {
         display: none;
+    } */
+
+        header #menu {
+            display: initial;
+            position: absolute;
+            right: 30px;
+            top: 20px;
+        }
+
+        .disponible {
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .status::after {
+            bottom: 0;
+            right: 0;
+
+        }
+
+        .status {
+            position: relative;
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #00ff00;
+            border-radius: 90%;
+            margin: 10px;
+            gap: 5px;
+        }
+
+        .status::after {
+            width: 100%;
+            height: 100%;
+            background: #00ff00;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        .header-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .header-nav a {
+            margin-left: 0;
+            font-size: 14px;
+        }
+
+        /* HERO */
+        .name {
+            flex-direction: column;
+            gap: 5px;
+            margin-top: 35px;
+            text-align: center;
+        }
+
+        .name h1 {
+            font-size: 28px;
+            line-height: 1.3;
+        }
+
+        #digital {
+            font-size: 15px;
+        }
+
+        .presentation {
+            margin-top: 25px;
+            font-size: 15px;
+            padding: 0 5px;
+        }
+
+        /* CARD PROFIL */
+        .card {
+            width: 100%;
+            padding: 22px;
+            border-radius: 25px;
+        }
+
+        .card img {
+            width: 120px;
+            height: 120px;
+        }
+
+        .reseaux i {
+            margin: 0 12px;
+            font-size: 24px;
+        }
+
+        /* SECTION CTA */
+        .titre-bouton {
+            margin-top: 40px;
+        }
+
+        .titre-bouton p {
+            margin-top: 0;
+            font-size: 15px;
+            padding: 0 5px;
+        }
+
+        .bouton {
+            flex-direction: column;
+            margin-top: 30px;
+            gap: 12px;
+        }
+
+        .bouton a {
+            width: 100%;
+            max-width: 330px;
+            padding: 12px;
+        }
+
+        .bouton a:hover {
+            transform: none;
+        }
+
+        /* INFOS */
+        .infos {
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .box {
+            width: 100%;
+        }
+
+        /* PROJETS */
+        #projets {
+            padding: 60px 10px;
+        }
+
+        .projet-carte {
+            gap: 18px;
+        }
+
+        .box-pro {
+            width: 100%;
+            max-width: 320px;
+            height: 260px;
+        }
+
+        .box-pro:hover {
+            transform: none;
+        }
+
+        .title h3 {
+            font-size: 14px;
+        }
+
+        .title p {
+            font-size: 12px;
+        }
+
+        /* CONTACT */
+        #contact {
+            padding: 60px 10px;
+        }
+
+        #contact h2 {
+            font-size: 28px;
+        }
+
+        .contact-box {
+            gap: 10px;
+        }
+
+        .btn-contact {
+            width: 100%;
+            max-width: 320px;
+            justify-content: center;
+            padding: 12px;
+        }
+
+        .btn-contact:hover {
+            transform: none;
+        }
+
+        /* FOOTER */
+        .footer {
+            margin-top: 50px;
+            padding: 20px 10px;
+            font-size: 13px;
+        }
+
     }
 
-    header #menu {
-        display: initial;
-        position: absolute;
-        right: 30px;
-        top: 20px;
+    /* PETITS TELEPHONES */
+    @media (max-width: 480px) {
+
+        .name h1 {
+            font-size: 24px;
+        }
+
+        .presentation,
+        .titre-bouton p,
+        #contact p {
+            font-size: 14px;
+        }
+
+        .box-pro {
+            height: 230px;
+        }
+
     }
-
-    .disponible {
-        justify-content: center;
-        align-items: center;
-        font-size: 14px;
-        text-align: center;
-    }
-
-    .status::after {
-        bottom: 0;
-        right: 0;
-
-    }
-
-    .header-nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-    }
-
-    .header-nav a {
-        margin-left: 0;
-        font-size: 14px;
-    }
-
-    /* HERO */
-    .name {
-        flex-direction: column;
-        gap: 5px;
-        margin-top: 35px;
-        text-align: center;
-    }
-
-    .name h1 {
-        font-size: 28px;
-        line-height: 1.3;
-    }
-
-    #digital {
-        font-size: 15px;
-    }
-
-    .presentation {
-        margin-top: 25px;
-        font-size: 15px;
-        padding: 0 5px;
-    }
-
-    /* CARD PROFIL */
-    .card {
-        width: 100%;
-        padding: 22px;
-        border-radius: 25px;
-    }
-
-    .card img {
-        width: 120px;
-        height: 120px;
-    }
-
-    .reseaux i {
-        margin: 0 12px;
-        font-size: 24px;
-    }
-
-    /* SECTION CTA */
-    .titre-bouton {
-        margin-top: 40px;
-    }
-
-    .titre-bouton p {
-        margin-top: 0;
-        font-size: 15px;
-        padding: 0 5px;
-    }
-
-    .bouton {
-        flex-direction: column;
-        margin-top: 30px;
-        gap: 12px;
-    }
-
-    .bouton a {
-        width: 100%;
-        max-width: 330px;
-        padding: 12px;
-    }
-
-    .bouton a:hover {
-        transform: none;
-    }
-
-    /* INFOS */
-    .infos {
-        gap: 25px;
-        margin-top: 35px;
-    }
-
-    .box {
-        width: 100%;
-    }
-
-    /* PROJETS */
-    #projets {
-        padding: 60px 10px;
-    }
-
-    .projet-carte {
-        gap: 18px;
-    }
-
-    .box-pro {
-        width: 100%;
-        max-width: 320px;
-        height: 260px;
-    }
-
-    .box-pro :hover {
-        transition: none;
-    }
-
-    .title h3 {
-        font-size: 14px;
-    }
-
-    .title p {
-        font-size: 12px;
-    }
-
-    /* CONTACT */
-    #contact {
-        padding: 60px 10px;
-    }
-
-    #contact h2 {
-        font-size: 28px;
-    }
-
-    .contact-box {
-        gap: 10px;
-    }
-
-    .btn-contact {
-        width: 100%;
-        max-width: 320px;
-        justify-content: center;
-        padding: 12px;
-    }
-
-    /* FOOTER */
-    .footer {
-        margin-top: 50px;
-        padding: 20px 10px;
-        font-size: 13px;
-    }
-
-}
-
-/* PETITS TELEPHONES */
-@media (max-width: 480px) {
-
-    .name h1 {
-        font-size: 24px;
-    }
-
-    .presentation,
-    .titre-bouton p,
-    #contact p {
-        font-size: 14px;
-    }
-
-    .box-pro {
-        height: 230px;
-    }
-
 }
